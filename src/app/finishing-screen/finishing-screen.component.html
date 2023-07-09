@@ -1,0 +1,91 @@
+
+
+
+ 
+    <div class="form-group">
+        <br>
+        <!-- <h1 class='text-center' style='font-family: "Alumni Sans Pinstripe"'><u>פרוייקט גמר הנדסת תוכנה - מאור
+            ורון</u></h1> -->
+            <br>
+            <div class="container form-control" style='text-align: right; direction: rtl;'>
+                <br><br>
+                <h1>תחזית הAI למצב הרוח שלך:</h1>
+                    <div class="result-container">
+                      <br>
+                        <ul>
+                          <li><b>Distracted Level:</b> {{ aiApi.response.distructedLevel[0] }} / 6
+                                <mat-progress-spinner
+                                class="example-margin"
+                                color="primary"
+                                mode="determinate"
+                                [value]="distractedVal">
+                            </mat-progress-spinner>
+                            <img src="../../assets/Distracted.jpg" style="transform: translate(40px, -93px);"
+                            alt="Distracted" class='emoji' *ngIf="!loader">
+                          </li>
+
+                          <li><b>Fear Level:</b> {{ aiApi.response.fearLevel[0] }} / 6
+                            <mat-progress-spinner
+                            class="example-margin"
+                            color="primary"
+                            mode="determinate"
+                            [value]="loader? 0 :(aiApi.response.fearLevel[0]/6)*100">
+                          </mat-progress-spinner>
+                          <img src="../../assets/Fear.jpg" alt="Fear" class='emoji' *ngIf="!loader">
+                          </li>
+                          <li><b>Joy Level:</b> {{ aiApi.response.joyLevel[0] }} / 6
+                            <mat-progress-spinner
+                            class="example-margin"
+                            color="primary"
+                            mode="determinate"
+                            [value]="loader? 0 :(aiApi.response.joyLevel[0]/ 6) * 100">
+                        </mat-progress-spinner>
+                        <img src="../../assets/Happy.jpg" alt="Happy" class='emoji' *ngIf="!loader">
+                          </li>
+                          <!-- <li>sadnessLevel: {{ aiApi.response.sadnessLevel[0] }} / 6
+                            <mat-progress-spinner
+                            class="example-margin"
+                            color="primary"
+                            mode="determinate"
+                            [value]="(aiApi.response.sadnessLevel[0]/6)*100">
+                        </mat-progress-spinner>
+                        <img src="Happy.jpg" alt="Happy">
+                          </li> -->
+                          <li><b>Stress Level:</b> {{ aiApi.response.stressLevel[0] }} / 6
+                            <mat-progress-spinner
+                            class="example-margin"
+                            color="primary"
+                            mode="determinate"
+                            [value]="loader? 0 :(aiApi.response.stressLevel[0]/6)*100">
+                        </mat-progress-spinner>
+                        <img src="../../assets/Stressed.jpg" style="transform: translate(38px, -91px);"
+                        alt="Stress" class='emoji' *ngIf="!loader">
+                          </li>
+                          <li><b>Tired Level:</b> {{ aiApi.response.tiredLevel[0] }} / 6
+                            <mat-progress-spinner
+                            class="example-margin"
+                            color="primary"
+                            mode="determinate"
+                            [value]="loader? 0 :(aiApi.response.tiredLevel[0]/6)*100">
+                        </mat-progress-spinner>
+                        <img src="../../assets/Tired.jpg" alt="Tired" class='emoji' *ngIf="!loader">
+                          </li>
+                        </ul>
+                    </div>
+                    <br><br>
+                
+            </div>
+
+            <div class="container form-control" style='text-align: right; direction: rtl; margin-top: 15px;'>
+              <br><br>
+                <h1>ניתוח התחזית ואיך ניתן להשתמש בה:</h1>
+                    <div class="result-container" [innerHTML]="gptService.res">
+                        <!-- {{gptService.res}} -->
+                    </div>
+            </div>
+            
+      </div>
+
+
+
+

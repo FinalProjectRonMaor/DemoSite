@@ -1,0 +1,25 @@
+{
+  "name": "web-based-sentiment-analysis-api",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "description": "This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sentiment",
+    "analisys",
+    "ai",
+    "api",
+    "degree-final-project"
+  ],
+  "author": "Maor Arnon & Ron Mansharof",
+  "license": "ISC"
+}

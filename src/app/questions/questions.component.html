@@ -1,0 +1,467 @@
+<br>
+<!-- <h1 class='text-center' style='font-family: "Alumni Sans Pinstripe"'><u>שאלון חקר פרוייקט גמר הנדסת תוכנה - מאור
+    ורון</u></h1> -->
+
+<br>
+<div class="container form-control">
+  <div class="row ">
+    <div class="formSize" id="formSize">
+      <form (ngSubmit)="onSubmit()" #f="ngForm" id="formID">
+        <div class="form-group">
+          <label for="userAge">גיל?</label>
+          <input id="userAge" name="userAge" ngModel placeholder="מה הגיל שלך?" type="number" class="form-control"
+            #userAge="ngModel" required>
+          <!-- <div class="valid-feedback"></div>
+            <div class="invalid-feedback" *ngIf="userAge?.touched">אנא הכנס ערך מספרי</div> -->
+        </div>
+        <div class="form-group">
+          <label>מגדר</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="userSex" id="userSex_0" type="radio" class="form-check-input" value="male"
+                required="required">
+              <label for="userSex_0" class="custom-control-label">זכר</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="userSex" id="userSex_1" type="radio" class="form-check-input" value="female"
+                required="required">
+              <label for="userSex_1" class="custom-control-label">נקבה</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="userSex" id="userSex_2" type="radio" class="form-check-input" value="other"
+                required="required">
+              <label for="userSex_2" class="custom-control-label">אחר</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>יד דומיננטית</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="dominantHand" id="dominantHand_0" type="radio" required="required"
+                class="form-check-input" value="right">
+              <label for="dominantHand_0" class="custom-control-label">ימין</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="dominantHand" id="dominantHand_1" type="radio" required="required"
+                class="form-check-input" value="left">
+              <label for="dominantHand_1" class="custom-control-label">שמאל</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nativeLanguage">על מנת לאפס את המודל ובכדי לקבל תשובות מדויקות, אנחנו שואלים שאלות כלליות על מנת לאפשר למודל לקבל נתוני שימוש באתר אין חשיבות לתשובות השאלות.</label>
+          <label><br>כמה זה 1+1</label>
+          <div class="optionsStyle">
+            <select ngModel id="nativeLanguage" name="nativeLanguage" class="custom-select" required>
+              <option value="none" selected disabled hidden>0</option>
+              <option value="hebrew">1</option>
+              <option value="english">2</option>
+              <option value="arabic">3</option>
+              <option value="other">אחר</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>נתת ביקורת חיובית לבני בסקר הוראה?</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="beni" id="beni_0" type="radio" required="required"
+                class="form-check-input" value="y">
+              <label for="beni_0" class="custom-control-label">כן</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="beni" id="beni_1" type="radio" required="required"
+                class="form-check-input" value="n" checked="checked">
+              <label for="beni_1" class="custom-control-label">ברור</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>לדעתך לכתוב 40 מילים זה מוגזם?</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input [(ngModel)]="patienceUser" name="patienceUser" id="patienceUser_0" type="radio" required="required"
+                class="form-check-input" value="y">
+              <label for="patienceUser_0" class="custom-control-label">מוגזם</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="patienceUser" id="patienceUser_1" type="radio" required="required"
+                class="form-check-input" value="n" checked="checked">
+              <label for="patienceUser_1" class="custom-control-label">לא</label>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="form-group">
+          <label for="motoricProblemInfo">פרט:</label>
+          <textarea ngModel id="motoricProblemInfo" name="motoricProblemInfo" cols="40" rows="1"
+            aria-describedby="motoricProblemInfoHelpBlock" class="form-control"
+            placeholder="במידה ויש בעיות מוטוריות ניתן לפרט"></textarea>
+        </div> -->
+
+        <!-- <div class="form-group">
+          <label>רמת שמחה בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="joyLevel" id="joyLevel_0" type="radio" class="form-check-input" value="0"
+                required="required">
+              <label for="joyLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="joyLevel" id="joyLevel_1" type="radio" class="form-check-input" value="1"
+                required="required">
+              <label for="joyLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="joyLevel" id="joyLevel_2" type="radio" class="form-check-input" value="2"
+                required="required">
+              <label for="joyLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="joyLevel" id="joyLevel_3" type="radio" required="required" class="form-check-input"
+                value="3">
+              <label for="joyLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="joyLevel" id="joyLevel_4" type="radio" required="required" class="form-check-input"
+                value="4">
+              <label for="joyLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="joyLevel" id="joyLevel_5" type="radio" required="required" class="form-check-input"
+                value="5">
+              <label for="joyLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא שמח בכלל ו 5 שמח מאוד</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>רמת פחד בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="fearLevel" id="fearLevel_0" type="radio" class="form-check-input" value="0"
+                required="required">
+              <label for="fearLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="fearLevel" id="fearLevel_1" type="radio" class="form-check-input" value="1"
+                required="required">
+              <label for="fearLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="fearLevel" id="fearLevel_2" type="radio" class="form-check-input" value="2"
+                required="required">
+              <label for="fearLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="fearLevel" id="fearLevel_3" type="radio" required="required" class="form-check-input"
+                value="3">
+              <label for="fearLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="fearLevel" id="fearLevel_4" type="radio" required="required" class="form-check-input"
+                value="4">
+              <label for="fearLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="fearLevel" id="fearLevel_5" type="radio" required="required" class="form-check-input"
+                value="5">
+              <label for="fearLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא מפחד כלל ו 5 מפחד מאוד</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>רמת כעס בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="angerLevel" id="angerLevel_0" type="radio" class="form-check-input" value="0"
+                required="required">
+              <label for="angerLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="angerLevel" id="angerLevel_1" type="radio" class="form-check-input" value="1"
+                required="required">
+              <label for="angerLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="angerLevel" id="angerLevel_2" type="radio" class="form-check-input" value="2"
+                required="required">
+              <label for="angerLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="angerLevel" id="angerLevel_3" type="radio" required="required"
+                class="form-check-input" value="3">
+              <label for="angerLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="angerLevel" id="angerLevel_4" type="radio" required="required"
+                class="form-check-input" value="4">
+              <label for="angerLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="angerLevel" id="angerLevel_5" type="radio" required="required"
+                class="form-check-input" value="5">
+              <label for="angerLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא כועס בכלל ו 5 כועס מאוד</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>רמת עצב בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="sadnessLevel" id="sadnessLevel_0" type="radio" class="form-check-input" value="0"
+                required="required">
+              <label for="sadnessLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="sadnessLevel" id="sadnessLevel_1" type="radio" class="form-check-input" value="1"
+                required="required">
+              <label for="sadnessLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="sadnessLevel" id="sadnessLevel_2" type="radio" class="form-check-input" value="2"
+                required="required">
+              <label for="sadnessLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="sadnessLevel" id="sadnessLevel_3" type="radio" required="required"
+                class="form-check-input" value="3">
+              <label for="sadnessLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="sadnessLevel" id="sadnessLevel_4" type="radio" required="required"
+                class="form-check-input" value="4">
+              <label for="sadnessLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="sadnessLevel" id="sadnessLevel_5" type="radio" required="required"
+                class="form-check-input" value="5">
+              <label for="sadnessLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא עצוב בכלל ו 5 עצוב מאוד</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>רמת לחץ בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="stressLevel" id="stressLevel_0" type="radio" class="form-check-input" value="0"
+                required="required">
+              <label for="stressLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="stressLevel" id="stressLevel_1" type="radio" class="form-check-input" value="1"
+                required="required">
+              <label for="stressLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="stressLevel" id="stressLevel_2" type="radio" class="form-check-input" value="2"
+                required="required">
+              <label for="stressLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="stressLevel" id="stressLevel_3" type="radio" required="required"
+                class="form-check-input" value="3">
+              <label for="stressLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="stressLevel" id="stressLevel_4" type="radio" required="required"
+                class="form-check-input" value="4">
+              <label for="stressLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="stressLevel" id="stressLevel_5" type="radio" required="required"
+                class="form-check-input" value="5">
+              <label for="stressLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא לחוץ בכלל ו 5 לחוץ מאוד</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>רמת עייפות בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="tiredLevel" id="tiredLevel_0" type="radio" class="form-check-input" value="0"
+                required="required">
+              <label for="tiredLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="tiredLevel" id="tiredLevel_1" type="radio" class="form-check-input" value="1"
+                required="required">
+              <label for="tiredLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="tiredLevel" id="tiredLevel_2" type="radio" class="form-check-input" value="2"
+                required="required">
+              <label for="tiredLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="tiredLevel" id="tiredLevel_3" type="radio" required="required"
+                class="form-check-input" value="3">
+              <label for="tiredLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="tiredLevel" id="tiredLevel_4" type="radio" required="required"
+                class="form-check-input" value="4">
+              <label for="tiredLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="tiredLevel" id="tiredLevel_5" type="radio" required="required"
+                class="form-check-input" value="5">
+              <label for="tiredLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא עייף בכלל ו 5 עייף מאוד</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>רמת חוסר ריכוז בעת מילוי השאלון:</label>
+          <div class="optionsStyle">
+            <div class="form-check form-check-inline">
+              <input ngModel name="distructedLevel" id="distructedLevel_0" type="radio" class="form-check-input"
+                value="0" required="required">
+              <label for="distructedLevel_0" class="custom-control-label">0</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="distructedLevel" id="distructedLevel_1" type="radio" class="form-check-input"
+                value="1" required="required">
+              <label for="distructedLevel_1" class="custom-control-label">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="distructedLevel" id="distructedLevel_2" type="radio" class="form-check-input"
+                value="2" required="required">
+              <label for="distructedLevel_2" class="custom-control-label">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="distructedLevel" id="distructedLevel_3" type="radio" required="required"
+                class="form-check-input" value="3">
+              <label for="distructedLevel_3" class="custom-control-label">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="distructedLevel" id="distructedLevel_4" type="radio" required="required"
+                class="form-check-input" value="4">
+              <label for="distructedLevel_4" class="custom-control-label">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input ngModel name="distructedLevel" id="distructedLevel_5" type="radio" required="required"
+                class="form-check-input" value="5">
+              <label for="distructedLevel_5" class="custom-control-label">5</label>
+            </div>
+          </div>
+          <div>
+            <label class="ratingHelp">כאשר 0 לא מרוכז בכלל ו 5 מרוכז מאוד</label>
+          </div>
+        </div> -->
+        <div class="form-group">
+          <h3>תאר בלפחות 40 מילים מה עשית הבוקר: </h3>
+          <h3 *ngIf='patienceUser === "y"'> (גם אם אתה חושב שזה מוגזם 🙃) </h3>
+          <textarea ngModel id="textarea" name="textarea" cols="40" rows="5" class="form-control" onCopy="return false"
+            onDrag="return false" onDrop="return false" onPaste="return false" autocomplete=off required wordCountValidator></textarea>
+        </div>
+        <div class="form-group">
+          <!-- <div style="text-align: center;" class="form-check">
+            <input ngModel name="checkbox" id="checkbox_0" type="checkbox" aria-describedby="checkboxHelpBlock"
+              required="required" class="custom-control-input" value="user_terms">
+            <label style="display:inline" for="checkbox_0" class="custom-control-label">אני מאשר\ת את השתתפותי בשאלון</label>
+          </div>
+          <span id="checkboxHelpBlock" class="form-text text-muted"> אני מאשר את השתתפותי בשאלון, וכן מאפשר לחוקרים לבצע
+            שימוש במידע שייתקבל ממילוי השאלון (ייתכן ויהיה שימוש עתידי בנתונים אם הפרוייקט יימשך בעתיד)</span> -->
+        </div>
+
+        <button class="btn btn-primary form-control" type="submit" [disabled]="!f.valid">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="form-group">
+    <label for="secret">Secret Questions</label>
+    <select
+      id="secret"
+      class="form-control"
+      [ngModel]="defaultQuestion"
+      name="secret">
+      <option value="pet">Your first Pet?</option>
+      <option value="teacher">Your first teacher?</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <textarea
+      name="questionAnswer"
+      rows="3"
+      class="form-control"
+      [(ngModel)]="answer"></textarea>
+  </div>
+  <p>Your reply: {{ answer }}</p>
+  <div class="radio" *ngFor="let gender of genders">
+    <label>
+      <input
+        type="radio"
+        name="gender"
+        ngModel
+        [value]="gender"
+        required>
+      {{ gender }}
+    </label>
+  </div>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!f.valid">Submit</button>
+</form>
+</div>
+</div>
+<hr>
+<div class="row" *ngIf="submitted">
+<div class="col-xs-12">
+<h3>Your Data</h3>
+<p>Username: {{ user.username }}</p>
+<p>Mail: {{ user.email }}</p>
+<p>Secret Question: Your first {{ user.secretQuestion }}</p>
+<p>Answer: {{ user.answer }}</p>
+<p>Gender: {{ user.gender }}</p>
+</div>
+</div> -->
+
+
+<!-- 
+<form class="container form-control" #f='ngForm' (ngSubmit)="onSubmit(f)">
+
+            <label for="username" class='control-label'>username</label>
+            <input type="text" id="username" class="form-control" NgModel name='username'>
+            <label for="password" class='control-label'>password</label>
+            <input type="text" id="password" class="form-control" NgModel name='password'>
+
+    <hr>
+    <button type="submit" class="btn btn-primary col-md-12 form-control" [disabled]="!f.valid">submit</button>
+</form>
+<pre>{{f.value | json}}</pre>
+ -->
+
+
+
+<!-- <div class="row form-group form" >
+        <div class="col-md-12 "> -->
+<!-- <label [for]="i">{{q.question}}</label>
+            <input *ngIf="q.type == 'number'" [id]="i" [type]="q.type" class=" form-control" required [min]="q.range.min" [max]="q.range.max" NgModel [name]='q.title'>
+            <input *ngIf="q.type == 'text'" [id]="i" [type]="q.type" class="form-control" required NgModel [name]='q.title'>
+            <select *ngIf="q.type == 'list'" [id]="i" class="form-control" required >
+                <option *ngFor='let option of q.options' [value]="option">{{option}}</option>
+            </select> -->
+<!-- </div>
+    </div> -->

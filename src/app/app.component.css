@@ -1,0 +1,32 @@
+app-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+.bg-image {
+  background-image: url(https://static.timesofisrael.com/blogs/uploads/2021/07/IMG-20201220-WA0035.jpeg);
+  translate: transform();
+  background-repeat: no-repeat;
+  /* position: fixed; */
+  background-size: cover;
+  background-attachment: fixed;
+  /* height: -webkit-fill-available; */
+  min-height: -webkit-fill-available;
+}
+
+.bg-tint {
+  background-color: rgba(0, 0, 0, 0.8);
+  background-size: cover;
+  /* position: fixed; */
+  background-attachment: fixed;
+  /* height: -webkit-fill-available; */
+  height: 150vh;
+}
+
+.filler {
+height: 1px;
+}
